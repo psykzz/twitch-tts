@@ -1,0 +1,15 @@
+{
+  "name": "twitch-tts",
+  "version": "1.0.0",
+  "description": "Really simple tts for twitch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "psykzz",
+  "license": "ISC",
+  "dependencies": {
+    "irc": "^0.5.2",
+    "say": "^0.11.0"
+  }
+}
