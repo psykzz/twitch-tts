@@ -6,7 +6,7 @@ var port = '6667';
 var username = 'psykzz';
 
 // get token from http://twitchapps.com/tmi/
-var token = 'oauth:ewo3347cfj51tj02y29a1hqg7iqr8m';
+var token = 'changeme';
 
 var client = new irc.Client(server, username, {
     channels: [`#${username}`],
