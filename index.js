@@ -1,25 +1,21 @@
-var say = require('say');
-var irc = require('irc');
+const say = require('say');
+const irc = require('irc');
 
-var server = 'irc.chat.twitch.tv';
-var port = '6667';
-var username = 'psykzz';
+const server = 'irc.chat.twitch.tv';
+const port = '6667';
+const username = 'psykzz';
 
-// get token from http://twitchapps.com/tmi/
-var token = 'changeme';
+// http://twitchapps.com/tmi/
+const token = 'changeme';
 
-var client = new irc.Client(server, username, {
+const client = new irc.Client(server, username, {
     channels: [`#${username}`],
-    // debug: true,
-    // showErrors: true,
     password: token,
 });
 
-client.addListener('message', function (from, to, message) {
-    say.speak(from + ': ' + message)
-    console.log(from + ' => ' + to + ': ' + message);
+client.addListener('message', (from, to, message) => {
+    say.speak(`${from}: ${message}`)
+    console.log(`${from} => ${to}: ${message}`)
 });
 
-client.addListener('error', function(message) {
-    console.error(message);
-});
+client.addListener('error', console.error);
